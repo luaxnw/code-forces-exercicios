@@ -10,13 +10,13 @@ int main()
 
     int square = m * n;
 
-    while (square >= 0)
+    while (1)
     {
 
         if (square >= 2)
         {
+            square -= 2;
             maxDomino++;
-            square /= 2;
         }
 
         else
