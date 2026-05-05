@@ -35,9 +35,13 @@ int main()
 
         }
 
+
+
         for (int i = 0; i < aux; i++)
         {
-            printf("%i ", array[i]);
+            printf("%i", array[i]);
+            if( i+1 < aux)
+                printf("+");
         }
     }
 
