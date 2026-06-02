@@ -1,39 +1,39 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(){
-	
+int main()
+{
+
 	char word[101];
 	int sumOfZeros = 0;
 	int sumOfOnes = 0;
 	int i = 0;
-	if(fgets(word,101,stdin) == NULL)
+	if (fgets(word, 101, stdin) == NULL)
 		return 1;
 
-	for (char c = word[0]; c != '\0'; c = word[i]){
-		if (c == '1'){
+	word[strcspn(word, "\n")] = '\0';
+
+	for (int i = 0; word[i] != '\0'; i++)
+	{
+		if (word[i] == '1')
+		{
 			sumOfZeros = 0;
 			sumOfOnes++;
 		}
-		if (c == '0'){
+		if (word[i] == '0')
+		{
 			sumOfZeros++;
 			sumOfOnes = 0;
 		}
 
-		if (sumOfZeros == 7 || sumOfOnes == 7){
-			break;
-			printf("YES");}
-				
+		if (sumOfZeros >= 7 || sumOfOnes >= 7)
+		{
 
-		i++;
+			printf("YES\n");
+			return 0;
+		}
 	}
 
-	printf("%d\n%d\n",sumOfOnes, sumOfZeros); 
-	
-	
-
-
-
+	printf("NO\n");
 	return 0;
-
 }
